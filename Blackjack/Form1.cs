@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blackjack.classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,19 @@ using System.Windows.Forms;
 
 namespace Blackjack
 {
-    public partial class Form1: Form
+    public partial class BlackJack : Form
     {
-        public Form1()
+        Card twoOfHearts = new Card(Suits.HEARTS, FaceValues.TWO);
+
+        public BlackJack()
         {
             InitializeComponent();
+            twoOfHearts.Suit = Suits.HEARTS;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("It works!");
         }
     }
 }
