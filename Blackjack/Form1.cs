@@ -8,22 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Blackjack
 {
     public partial class BlackJack : Form
     {
-        Card twoOfHearts = new Card(Suits.HEARTS, FaceValues.TWO);
+        //Card twoOfHearts = new Card(Suits.HEARTS, FaceValues.TWO);
+        Deck deck = new Deck();
 
         public BlackJack()
         {
             InitializeComponent();
-            twoOfHearts.Suit = Suits.HEARTS;
+            //twoOfHearts.Suit = Suits.HEARTS;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        public void shuffleButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("It works!");
+            deck.Shuffle();
+            Console.WriteLine("it works!");
         }
     }
 }

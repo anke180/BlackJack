@@ -39,13 +39,8 @@ namespace Blackjack.classes
         int value;
         Image img;
 
-        public Suits Suit 
-        { 
-            get 
-            {
-                return suit;
-            }
-        }
+        public Suits Suit { get { return suit; } }
+        public int Value { get { return value; } }
 
         public Card(Suits suit, FaceValues faceValue)
         {
@@ -69,5 +64,10 @@ namespace Blackjack.classes
                     break;
             }
         }
+
+        //public override string ToString()
+        //{
+        //    return this.faceValue + " Of " + this.suit;
+        //}
     }
 }
