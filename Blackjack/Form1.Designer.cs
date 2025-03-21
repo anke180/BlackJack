@@ -51,7 +51,7 @@
             this.drawnCard.TabIndex = 1;
             this.drawnCard.Text = "Draw Card";
             this.drawnCard.UseVisualStyleBackColor = true;
-            this.drawnCard.Click += new System.EventHandler(this.button1_Click);
+            this.drawnCard.Click += new System.EventHandler(this.drawCards_Click);
             // 
             // textDrawnCard
             // 

@@ -24,17 +24,21 @@ namespace Blackjack
         }
 
 
-        public void shuffleButton_Click(object sender, EventArgs e)
+        private void shuffleButton_Click(object sender, EventArgs e)
         {
             deck.Shuffle();
             Console.WriteLine("it works!");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void drawCards_Click(object sender, EventArgs e)
         {
             Card drawnCard = deck.DrawCard();
             textDrawnCard.Text = drawnCard.ToString();
+        }
 
+        private void natural(object sender, EventArgs e)
+        {
+            
         }
     }
 }
