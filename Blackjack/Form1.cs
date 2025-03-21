@@ -29,5 +29,12 @@ namespace Blackjack
             deck.Shuffle();
             Console.WriteLine("it works!");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Card drawnCard = deck.DrawCard();
+            textDrawnCard.Text = drawnCard.ToString();
+
+        }
     }
 }
