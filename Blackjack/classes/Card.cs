@@ -37,9 +37,11 @@ namespace Blackjack.classes
         Suits suit;
         FaceValues faceValue;
         int value;
+        bool showFaceValue = false;
 
         public Suits Suit { get { return suit; } }
         public int Value { get { return value; } }
+        public bool ShowFaceValue { get { return showFaceValue;  } }
 
         public Card(Suits suit, FaceValues faceValue)
         {
@@ -66,7 +68,19 @@ namespace Blackjack.classes
 
         public override string ToString()
         {
-            return this.faceValue + " Of " + this.suit;
+            if (showFaceValue == true)
+            {
+                return this.faceValue + " Of " + this.suit;
+            }
+            else
+            {
+                return "The value of this card is hidden";
+            }
+        }
+
+        public void Flip()
+        {
+            showFaceValue = true;
         }
     }
 }

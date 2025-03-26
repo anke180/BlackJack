@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="classes\Card.cs" />
     <Compile Include="classes\Deck.cs" />
+    <Compile Include="classes\Hand.cs" />
+    <Compile Include="classes\Player.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
