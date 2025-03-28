@@ -19,6 +19,7 @@ namespace Blackjack
         Deck deck = new Deck();
         Hand hand = new Hand();
         List<Card> cards = new List<Card>();
+        Player[] players = new Player[2];
 
 
         //State diagram nog maken + kijken bij Robert op Github hoe het zit
@@ -34,6 +35,7 @@ namespace Blackjack
         {
             InitializeComponent();
             //twoOfHearts.Suit = Suits.HEARTS;
+            players[0] = new Player(card1Player1);
         }
 
         //private void handleEvent(GameStates newState)
@@ -63,6 +65,7 @@ namespace Blackjack
 
         private void drawCards_Click(object sender, EventArgs e)
         {
+            //dealingCards();
             Card drawnCard = deck.DrawCard();
             textDrawnCard.Text = drawnCard.ToString();
         }
@@ -74,9 +77,23 @@ namespace Blackjack
 
         public Card dealingCards()
         {
-            Card dealingCards = deck.DrawCard();
-            dealingCards.Flip();
-            return dealingCards;
+            Card dealingCard = deck.DrawCard();
+            dealingCard.Flip();
+            return dealingCard;
+        }
+
+        private void dealingCard_Click(object sender, EventArgs e)
+        {
+            Card dealingCard = dealingCards();
+            players[0].recieveCard(dealingCard);
+
+            dealingCard = dealingCards();
+            players[0].recieveCard(dealingCard);
+            //card1Player1.Text = dealingCard.ToString();
+            //card1Player2.Text = dealingCard.ToString();
+            //firstCardDealer.Text = dealingCard.ToString();
+            //card2Player1.Text = dealingCard.ToString();
+            //card2Player2.Text = dealingCard.ToString();
         }
     }
 }
