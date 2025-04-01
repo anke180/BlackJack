@@ -15,11 +15,10 @@ namespace Blackjack
 {
     public partial class BlackJack : Form
     {
-        //Card twoOfHearts = new Card(Suits.HEARTS, FaceValues.TWO);
         Deck deck = new Deck();
-        Hand hand = new Hand();
-        List<Card> cards = new List<Card>();
+        Hand hand;
         Player[] players = new Player[2];
+        List<Card> cards = new List<Card>();
 
 
         //State diagram nog maken + kijken bij Robert op Github hoe het zit
@@ -34,15 +33,15 @@ namespace Blackjack
         public BlackJack()
         {
             InitializeComponent();
-            //twoOfHearts.Suit = Suits.HEARTS;
-            players[0] = new Player(card1Player1);
+            players[0] = new Player(card1Player1,card2Player1);
+            players[1] = new Player(card1Player2, card2Player2);
+            hand = new Hand(firstCardDealer,secondCardDealer);
         }
 
         //private void handleEvent(GameStates newState)
         //{
         //    if ()
         //    {
-
         //    }
         //    else
         //    {
@@ -60,40 +59,49 @@ namespace Blackjack
         private void shuffleButton_Click(object sender, EventArgs e)
         {
             deck.Shuffle();
-            Console.WriteLine("it works!");
+            Console.WriteLine("The deck is shuffled");
         }
 
         private void drawCards_Click(object sender, EventArgs e)
         {
-            //dealingCards();
             Card drawnCard = deck.DrawCard();
             textDrawnCard.Text = drawnCard.ToString();
+            Console.WriteLine("You have drawn a Card");
         }
 
         private void natural(object sender, EventArgs e)
         {
-
         }
 
         public Card dealingCards()
         {
             Card dealingCard = deck.DrawCard();
-            dealingCard.Flip();
             return dealingCard;
         }
 
         private void dealingCard_Click(object sender, EventArgs e)
         {
-            Card dealingCard = dealingCards();
-            players[0].recieveCard(dealingCard);
-
-            dealingCard = dealingCards();
-            players[0].recieveCard(dealingCard);
-            //card1Player1.Text = dealingCard.ToString();
-            //card1Player2.Text = dealingCard.ToString();
-            //firstCardDealer.Text = dealingCard.ToString();
-            //card2Player1.Text = dealingCard.ToString();
-            //card2Player2.Text = dealingCard.ToString();
+            //for loop player
+            for (int i = 0; i < 2; i++)
+            {
+                for (int x = 0; x < 2; x++)
+                {
+                    Card dealingCard = dealingCards();
+                    dealingCard.Flip();
+                    players[i].recieveCard(dealingCard);
+                }
+            }
+            
+            //for loop hand dealer
+            for (int i = 0; i < 1; i++)
+            {
+                Card dealingCard = dealingCards();
+                dealingCard.Flip();
+                hand.recieveCard(dealingCard);
+            }
+            Card dealingHiddenCard = dealingCards();
+            hand.recieveCard(dealingHiddenCard);
+            Console.WriteLine("You have dealt the cards to the players and yourself");
         }
     }
 }

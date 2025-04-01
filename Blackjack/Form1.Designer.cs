@@ -38,6 +38,9 @@
             this.card2Player1 = new System.Windows.Forms.Label();
             this.card2Player2 = new System.Windows.Forms.Label();
             this.secondCardDealer = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Shuffle
@@ -71,7 +74,7 @@
             // 
             // dealingCard
             // 
-            this.dealingCard.Location = new System.Drawing.Point(442, 192);
+            this.dealingCard.Location = new System.Drawing.Point(440, 180);
             this.dealingCard.Name = "dealingCard";
             this.dealingCard.Size = new System.Drawing.Size(109, 69);
             this.dealingCard.TabIndex = 3;
@@ -84,60 +87,90 @@
             this.card1Player1.AutoSize = true;
             this.card1Player1.Location = new System.Drawing.Point(492, 64);
             this.card1Player1.Name = "card1Player1";
-            this.card1Player1.Size = new System.Drawing.Size(136, 16);
+            this.card1Player1.Size = new System.Drawing.Size(112, 16);
             this.card1Player1.TabIndex = 4;
-            this.card1Player1.Text = "<Placeholder Card 1>";
+            this.card1Player1.Text = "<Player 1 Card 1>";
             // 
             // card1Player2
             // 
             this.card1Player2.AutoSize = true;
-            this.card1Player2.Location = new System.Drawing.Point(647, 64);
+            this.card1Player2.Location = new System.Drawing.Point(695, 64);
             this.card1Player2.Name = "card1Player2";
-            this.card1Player2.Size = new System.Drawing.Size(136, 16);
+            this.card1Player2.Size = new System.Drawing.Size(112, 16);
             this.card1Player2.TabIndex = 5;
-            this.card1Player2.Text = "<Placeholder Card 1>";
+            this.card1Player2.Text = "<Player 2 Card 1>";
             // 
             // firstCardDealer
             // 
             this.firstCardDealer.AutoSize = true;
             this.firstCardDealer.Location = new System.Drawing.Point(593, 193);
             this.firstCardDealer.Name = "firstCardDealer";
-            this.firstCardDealer.Size = new System.Drawing.Size(136, 16);
+            this.firstCardDealer.Size = new System.Drawing.Size(104, 16);
             this.firstCardDealer.TabIndex = 6;
-            this.firstCardDealer.Text = "<Placeholder Card 1>";
+            this.firstCardDealer.Text = "<Dealer Card 1>";
             // 
             // card2Player1
             // 
             this.card2Player1.AutoSize = true;
             this.card2Player1.Location = new System.Drawing.Point(492, 94);
             this.card2Player1.Name = "card2Player1";
-            this.card2Player1.Size = new System.Drawing.Size(136, 16);
+            this.card2Player1.Size = new System.Drawing.Size(119, 16);
             this.card2Player1.TabIndex = 7;
-            this.card2Player1.Text = "<Placeholder Card 2>";
+            this.card2Player1.Text = "<Placyer 1 Card 2>";
             // 
             // card2Player2
             // 
             this.card2Player2.AutoSize = true;
-            this.card2Player2.Location = new System.Drawing.Point(647, 94);
+            this.card2Player2.Location = new System.Drawing.Point(695, 94);
             this.card2Player2.Name = "card2Player2";
-            this.card2Player2.Size = new System.Drawing.Size(136, 16);
+            this.card2Player2.Size = new System.Drawing.Size(112, 16);
             this.card2Player2.TabIndex = 8;
-            this.card2Player2.Text = "<Placeholder Card 2>";
+            this.card2Player2.Text = "<Player 2 Card 2>";
             // 
             // secondCardDealer
             // 
             this.secondCardDealer.AutoSize = true;
             this.secondCardDealer.Location = new System.Drawing.Point(593, 218);
             this.secondCardDealer.Name = "secondCardDealer";
-            this.secondCardDealer.Size = new System.Drawing.Size(136, 16);
+            this.secondCardDealer.Size = new System.Drawing.Size(104, 16);
             this.secondCardDealer.TabIndex = 9;
-            this.secondCardDealer.Text = "<Placeholder Card 2>";
+            this.secondCardDealer.Text = "<Dealer Card 2>";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(505, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Player 1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(715, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Player 2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(612, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Dealer";
             // 
             // BlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 376);
+            this.ClientSize = new System.Drawing.Size(977, 496);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.secondCardDealer);
             this.Controls.Add(this.card2Player2);
             this.Controls.Add(this.card2Player1);
@@ -167,6 +200,9 @@
         private System.Windows.Forms.Label card2Player1;
         private System.Windows.Forms.Label card2Player2;
         private System.Windows.Forms.Label secondCardDealer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

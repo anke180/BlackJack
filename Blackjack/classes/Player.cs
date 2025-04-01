@@ -8,17 +8,15 @@ namespace Blackjack.classes
 {
     public class Player
     {
-        Hand hand = new Hand();
-        System.Windows.Forms.Label label;
-
-        public Player(System.Windows.Forms.Label label)
+        Hand hand;
+        public Player(System.Windows.Forms.Label label, System.Windows.Forms.Label label2)
         {
-            this.label = label;
+            hand = new Hand(label,label2);
         }
 
         public void recieveCard(Card card)
         {
-            this.label.Text = card.ToString();
+            hand.recieveCard(card);
         }
     }
 }
