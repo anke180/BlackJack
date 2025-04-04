@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blackjack.classes
 {
@@ -28,5 +25,17 @@ namespace Blackjack.classes
             }
         }
 
+        public void checkForNatural()
+        {
+            //hier moeten we dus de waardes hebben van de 2 kaarten in int, want dat kunnen we gebruiken in de if 
+            int totalPointsCards = 21;
+            //daarna checken if de waarde van de 2 kaarten gelijk is 21 dus met een if statement
+            if (totalPointsCards == 21) {
+                Console.WriteLine("this player does have a natural!");
+            }
+            else {
+                Console.WriteLine("this player does not have a natural.");
+            }
+        }
     }
 }

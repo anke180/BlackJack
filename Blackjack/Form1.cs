@@ -1,15 +1,6 @@
 ﻿using Blackjack.classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Blackjack
 {
@@ -18,7 +9,7 @@ namespace Blackjack
         Deck deck = new Deck();
         Hand hand;
         Player[] players = new Player[2];
-        List<Card> cards = new List<Card>();
+        //List<Card> cards = new List<Card>();
 
 
         //State diagram nog maken + kijken bij Robert op Github hoe het zit
@@ -67,10 +58,6 @@ namespace Blackjack
             Card drawnCard = deck.DrawCard();
             textDrawnCard.Text = drawnCard.ToString();
             Console.WriteLine("You have drawn a Card");
-        }
-
-        private void natural(object sender, EventArgs e)
-        {
         }
 
         public Card dealingCards()
