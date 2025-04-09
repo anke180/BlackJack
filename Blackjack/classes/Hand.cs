@@ -27,14 +27,18 @@ namespace Blackjack.classes
 
         public void checkForNatural()
         {
-            //hier moeten we dus de waardes hebben van de 2 kaarten in int, want dat kunnen we gebruiken in de if 
+            Card firstCard = cards[0];
+            Card secondCard = cards[1];
+
             int totalPointsCards = 21;
-            //daarna checken if de waarde van de 2 kaarten gelijk is 21 dus met een if statement
-            if (totalPointsCards == 21) {
+            int totalPointsRecievedCards = firstCard.Value + secondCard.Value;
+            
+            if (totalPointsRecievedCards == totalPointsCards) {
                 Console.WriteLine("this player does have a natural!");
             }
             else {
-                Console.WriteLine("this player does not have a natural.");
+                Console.WriteLine("this player does not have a natural!");
+                Console.WriteLine(totalPointsRecievedCards);
             }
         }
     }

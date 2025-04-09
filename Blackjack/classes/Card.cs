@@ -36,6 +36,8 @@
         public int Value { get { return value; } }
         public bool ShowFaceValue { get { return showFaceValue;  } }
 
+
+
         public Card(Suits suit, FaceValues faceValue)
         {
             this.suit = suit;

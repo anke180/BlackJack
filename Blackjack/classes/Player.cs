@@ -12,5 +12,10 @@
         {
             hand.recieveCard(card);
         }
+
+        public void checkForNatural()
+        {
+            hand.checkForNatural();
+        }
     }
 }

@@ -78,8 +78,8 @@ namespace Blackjack
                     players[i].recieveCard(dealingCard);
                 }
             }
-            
-            //for loop hand dealer
+
+            //for loop hand dealer, twijfel of dit uberhaubt in een loop moet omdat dit maar 1 keer gebeurt
             for (int i = 0; i < 1; i++)
             {
                 Card dealingCard = dealingCards();
@@ -89,6 +89,24 @@ namespace Blackjack
             Card dealingHiddenCard = dealingCards();
             hand.recieveCard(dealingHiddenCard);
             Console.WriteLine("You have dealt the cards to the players and yourself");
+        }
+
+        private void checkNaturalPlayer1_Click(object sender, EventArgs e)
+        {
+            //mag alleen als de eerste speler aan de beurt is
+            players[0].checkForNatural();
+        }
+
+        private void checkNaturalPlayer2_Click(object sender, EventArgs e)
+        {
+            //mag alleen als de tweede speler aan de beurt is
+            players[1].checkForNatural();
+        }
+
+        private void checkNaturalDealer_Click(object sender, EventArgs e)
+        {
+            //dit moet zorgen voor een min punt, want je mag niet controleren op een natural voor de dealer
+            hand.checkForNatural();
         }
     }
 }

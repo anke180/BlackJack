@@ -41,6 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkNatural = new System.Windows.Forms.Button();
+            this.checkNaturalPlayer1 = new System.Windows.Forms.Button();
+            this.checkNaturalPlayer2 = new System.Windows.Forms.Button();
+            this.checkNaturalDealer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Shuffle
@@ -163,11 +167,52 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Dealer";
             // 
+            // checkNatural
+            // 
+            this.checkNatural.Location = new System.Drawing.Point(0, 0);
+            this.checkNatural.Name = "checkNatural";
+            this.checkNatural.Size = new System.Drawing.Size(75, 23);
+            this.checkNatural.TabIndex = 0;
+            // 
+            // checkNaturalPlayer1
+            // 
+            this.checkNaturalPlayer1.Location = new System.Drawing.Point(88, 218);
+            this.checkNaturalPlayer1.Name = "checkNaturalPlayer1";
+            this.checkNaturalPlayer1.Size = new System.Drawing.Size(116, 59);
+            this.checkNaturalPlayer1.TabIndex = 13;
+            this.checkNaturalPlayer1.Text = "Check for Natural Player 1";
+            this.checkNaturalPlayer1.UseVisualStyleBackColor = true;
+            this.checkNaturalPlayer1.Click += new System.EventHandler(this.checkNaturalPlayer1_Click);
+            // 
+            // checkNaturalPlayer2
+            // 
+            this.checkNaturalPlayer2.Location = new System.Drawing.Point(88, 283);
+            this.checkNaturalPlayer2.Name = "checkNaturalPlayer2";
+            this.checkNaturalPlayer2.Size = new System.Drawing.Size(116, 59);
+            this.checkNaturalPlayer2.TabIndex = 14;
+            this.checkNaturalPlayer2.Text = "Check for Natural Player 2";
+            this.checkNaturalPlayer2.UseVisualStyleBackColor = true;
+            this.checkNaturalPlayer2.Click += new System.EventHandler(this.checkNaturalPlayer2_Click);
+            // 
+            // checkNaturalDealer
+            // 
+            this.checkNaturalDealer.Location = new System.Drawing.Point(88, 348);
+            this.checkNaturalDealer.Name = "checkNaturalDealer";
+            this.checkNaturalDealer.Size = new System.Drawing.Size(116, 59);
+            this.checkNaturalDealer.TabIndex = 15;
+            this.checkNaturalDealer.Text = "Check Natural Dealer";
+            this.checkNaturalDealer.UseVisualStyleBackColor = true;
+            this.checkNaturalDealer.Click += new System.EventHandler(this.checkNaturalDealer_Click);
+            // 
             // BlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 496);
+            this.Controls.Add(this.checkNaturalDealer);
+            this.Controls.Add(this.checkNaturalPlayer2);
+            this.Controls.Add(this.checkNaturalPlayer1);
+            this.Controls.Add(this.checkNatural);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -203,6 +248,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button checkNatural;
+        private System.Windows.Forms.Button checkNaturalPlayer1;
+        private System.Windows.Forms.Button checkNaturalPlayer2;
+        private System.Windows.Forms.Button checkNaturalDealer;
     }
 }
 
