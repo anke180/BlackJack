@@ -9,17 +9,18 @@ namespace Blackjack
         Deck deck = new Deck();
         Hand hand;
         Player[] players = new Player[2];
-        //List<Card> cards = new List<Card>();
 
+        private enum GameStates
+        {
+            SHUFFLE_DECK,
+            DEAL_CARDS_AT_START,
+            CHECK_PLAYER1_FOR_NATURAL,
+            CHECK_PLAYER2_FOR_NATURAL,
+            CHECK_DEALER_FOR_NATURAL,
+        }
 
-        //State diagram nog maken + kijken bij Robert op Github hoe het zit
-        //private enum GameStates
-        //{
-        //    START_GAME,
-        //    SHUFFLE_DECK,
-        //    DEAL_AT_START,
-        //    CHECK_DEALER_FOR_BLACKJACK,
-        //}
+        int pointsDealer = 0;
+        GameStates currentGameState = GameStates.SHUFFLE_DECK;
 
         public BlackJack()
         {
@@ -29,26 +30,35 @@ namespace Blackjack
             hand = new Hand(firstCardDealer,secondCardDealer);
         }
 
-        //private void handleEvent(GameStates newState)
-        //{
-        //    if ()
-        //    {
-        //    }
-        //    else
-        //    {
-        //        points++;
-        //        switch (newState)
-        //        {
-        //            case GameStates.SHUFFLE_DECK:
-        //                deck.Shuffle();
-        //                currentGameState = GameStates.SHUFFLE_DECK;
-        //                break;
-        //        }
-        //    }
-        //}
+        private void handleEvent(GameStates newState)
+        {
+            if (currentGameState != newState)
+            {
+                pointsDealer--;
+            }
+            else
+            {
+                pointsDealer++;
+                switch (newState)
+                {
+                    case GameStates.SHUFFLE_DECK:
+                        currentGameState = GameStates.DEAL_CARDS_AT_START;
+                        break;
+                    case GameStates.DEAL_CARDS_AT_START:
+                        currentGameState = GameStates.CHECK_PLAYER1_FOR_NATURAL;
+                        break;
+                    case GameStates.CHECK_PLAYER1_FOR_NATURAL:
+                        currentGameState = GameStates.CHECK_PLAYER2_FOR_NATURAL;
+                        break;
+                    //alleen als je nou meerdere keren op check natural player 2 klikt, gaan de points ++ ipv --
+                }
+            }
+            dealerPoints.Text = pointsDealer.ToString();
+        }
 
         private void shuffleButton_Click(object sender, EventArgs e)
         {
+            handleEvent(GameStates.SHUFFLE_DECK);
             deck.Shuffle();
             Console.WriteLine("The deck is shuffled");
         }
@@ -68,6 +78,7 @@ namespace Blackjack
 
         private void dealingCard_Click(object sender, EventArgs e)
         {
+            handleEvent(GameStates.DEAL_CARDS_AT_START);
             //for loop player
             for (int i = 0; i < 2; i++)
             {
@@ -93,12 +104,14 @@ namespace Blackjack
 
         private void checkNaturalPlayer1_Click(object sender, EventArgs e)
         {
+            handleEvent(GameStates.CHECK_PLAYER1_FOR_NATURAL);
             //mag alleen als de eerste speler aan de beurt is
             players[0].checkForNatural();
         }
 
         private void checkNaturalPlayer2_Click(object sender, EventArgs e)
         {
+            handleEvent(GameStates.CHECK_PLAYER2_FOR_NATURAL);
             //mag alleen als de tweede speler aan de beurt is
             players[1].checkForNatural();
         }

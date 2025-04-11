@@ -45,6 +45,8 @@
             this.checkNaturalPlayer1 = new System.Windows.Forms.Button();
             this.checkNaturalPlayer2 = new System.Windows.Forms.Button();
             this.checkNaturalDealer = new System.Windows.Forms.Button();
+            this.dealerPoints = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Shuffle
@@ -204,11 +206,31 @@
             this.checkNaturalDealer.UseVisualStyleBackColor = true;
             this.checkNaturalDealer.Click += new System.EventHandler(this.checkNaturalDealer_Click);
             // 
+            // dealerPoints
+            // 
+            this.dealerPoints.AutoSize = true;
+            this.dealerPoints.Location = new System.Drawing.Point(724, 369);
+            this.dealerPoints.Name = "dealerPoints";
+            this.dealerPoints.Size = new System.Drawing.Size(177, 16);
+            this.dealerPoints.TabIndex = 16;
+            this.dealerPoints.Text = "<Placeholder points Dealer>";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(603, 369);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 16);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Dealer total points";
+            // 
             // BlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 496);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dealerPoints);
             this.Controls.Add(this.checkNaturalDealer);
             this.Controls.Add(this.checkNaturalPlayer2);
             this.Controls.Add(this.checkNaturalPlayer1);
@@ -252,6 +274,8 @@
         private System.Windows.Forms.Button checkNaturalPlayer1;
         private System.Windows.Forms.Button checkNaturalPlayer2;
         private System.Windows.Forms.Button checkNaturalDealer;
+        private System.Windows.Forms.Label dealerPoints;
+        private System.Windows.Forms.Label label4;
     }
 }
 
