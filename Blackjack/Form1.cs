@@ -50,7 +50,9 @@ namespace Blackjack
                     case GameStates.CHECK_PLAYER1_FOR_NATURAL:
                         currentGameState = GameStates.CHECK_PLAYER2_FOR_NATURAL;
                         break;
-                    //alleen als je nou meerdere keren op check natural player 2 klikt, gaan de points ++ ipv --
+                    case GameStates.CHECK_PLAYER2_FOR_NATURAL:
+                        currentGameState = GameStates.CHECK_DEALER_FOR_NATURAL;
+                        break;
                 }
             }
             dealerPoints.Text = pointsDealer.ToString();
@@ -118,7 +120,7 @@ namespace Blackjack
 
         private void checkNaturalDealer_Click(object sender, EventArgs e)
         {
-            //dit moet zorgen voor een min punt, want je mag niet controleren op een natural voor de dealer
+            handleEvent(GameStates.CHECK_DEALER_FOR_NATURAL);
             hand.checkForNatural();
         }
     }
